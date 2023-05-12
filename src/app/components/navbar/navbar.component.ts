@@ -20,7 +20,7 @@ export class NavbarComponent implements OnInit{
       this.user = this.login.getUser();
     })
   }
-
+  //logout from the page
   public logout(){
     this.login.logout();
     window.location.reload();
