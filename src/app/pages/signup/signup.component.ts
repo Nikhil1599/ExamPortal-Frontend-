@@ -14,8 +14,8 @@ export class SignupComponent implements OnInit {
   public user = {
     username: '',
     password: '',
-    firstname: '',
-    lastname: '',
+    firstName: '',
+    lastName: '',
     email: '',
     phone: '',
   };
@@ -33,13 +33,11 @@ export class SignupComponent implements OnInit {
         //success
         console.log(data);
         Swal.fire('Successfully Registered','User ID : '+data.id,'success');
-
       },
       (error)=>{
         //error
         console.log(error)
         this.snack.open("Something went wrong",'',{duration:3000,verticalPosition:'top',});
-      }
-    )
+      })
   }
 }
