@@ -11,29 +11,17 @@ export class ViewQuizzesComponent implements OnInit {
 
   quizzes = [
     {
-      qId:23,
-      title:'Basic of Java',
-      description:'Java Programming',
-      maxMarks:'50',
-      numerOfQuestions:'20',
+      qId:'',
+      title:'',
+      description:'',
+      maxMarks:'',
+      numerOfQuestions:'',
       active:'',
       category:
       {
-        title:'Programming'
+        title:''
       }
     },
-    {
-      qId:23,
-      title:'Basic of Python',
-      description:'Python Programming',
-      maxMarks:'50',
-      numberOfQuestions:'20',
-      active:'',
-      category:
-      {
-        title:'Programming'
-      }
-    }
   ]
   constructor(private _quiz:QuizService){}
   ngOnInit(): void {

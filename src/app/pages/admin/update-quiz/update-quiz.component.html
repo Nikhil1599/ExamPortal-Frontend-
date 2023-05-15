@@ -32,7 +32,7 @@
       <br>
       <mat-form-field class="mt20 w80" appearance="outline">
         <mat-label>Select Category</mat-label>
-        <mat-select name="category" [(ngModel)] = "quiz.category.cid">
+        <mat-select name="category" [(ngModel)] = "quiz.category">
           <mat-option *ngFor="let c of categories" [value] = "c">
             {{c.title}}
           </mat-option>
