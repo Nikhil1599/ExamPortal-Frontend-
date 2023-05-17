@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes, CanActivate } from '@angular/router';
 import { SignupComponent } from './pages/signup/signup.component';
 import { LoginComponent } from './pages/login/login.component';
 import { HomeComponent } from './pages/home/home.component';
@@ -15,6 +15,10 @@ import { ViewQuizzesComponent } from './pages/admin/view-quizzes/view-quizzes.co
 import { AddQuizComponent } from './pages/admin/add-quiz/add-quiz.component';
 import { UpdateQuizComponent } from './pages/admin/update-quiz/update-quiz.component';
 import { ViewQuizQuestionsComponent } from './pages/admin/view-quiz-questions/view-quiz-questions.component';
+import { AddQuestionComponent } from './pages/admin/add-question/add-question.component';
+import { LoadQuizComponent } from './pages/user/load-quiz/load-quiz.component';
+import { InstructionsComponent } from './pages/user/instructions/instructions.component';
+import { StartComponent } from './pages/user/start/start.component';
 
 const routes: Routes = [
   {
@@ -68,13 +72,31 @@ const routes: Routes = [
       {
         path: 'view-questions/:qid/:title',
         component: ViewQuizQuestionsComponent,
-      }
+      },
+      {
+        path: 'add-question/:qid/:title',
+        component: AddQuestionComponent,
+      },
     ]
   },
   {
     path:'user-dashboard',
     component:UserDashboardComponent,
-    pathMatch:'full',
+    canActivate:[NormalGuard],
+    children:[
+      {
+        path:':catId',
+        component:LoadQuizComponent
+      },
+      {
+        path:'instructions/:qid',
+        component:InstructionsComponent
+      },
+    ]
+  },
+  {
+    path:'start/:qid',
+    component:StartComponent,
     canActivate:[NormalGuard]
   }
 ];

@@ -33,6 +33,12 @@ export class SignupComponent implements OnInit {
         //success
         console.log(data);
         Swal.fire('Successfully Registered','User ID : '+data.id,'success');
+        this.user.firstName = '',
+        this.user.lastName = '',
+        this.user.email = '',
+        this.user.password = '',
+        this.user.phone = '',
+        this.user.username = ''
       },
       (error)=>{
         //error

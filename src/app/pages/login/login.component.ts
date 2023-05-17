@@ -44,7 +44,7 @@ export class LoginComponent implements OnInit{
               this.login.loginStatusSubject.next(true);
             }else if(this.login.getUserRole() == "NORMAL"){
               // window.location.href='/user-dashboard'
-              this.router.navigate(['user-dashboard'])
+              this.router.navigate(['user-dashboard/0']);
               this.login.loginStatusSubject.next(true);
             }else{
               this.login.logout();
