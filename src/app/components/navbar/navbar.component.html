@@ -13,7 +13,7 @@
     <mat-icon>app_registration</mat-icon>
   </a>&nbsp;
 
-  <button mat-button routerLink="admin/profile" style="font-size: 15px; margin: 15px;" *ngIf = "isLoggedIn && user">
+  <button mat-button style="font-size: 15px; margin: 15px;" *ngIf = "isLoggedIn && user">
     {{ user.username }}
   </button>
   <span *ngIf = "isLoggedIn" style="font-size: 13px;">Logout</span>
